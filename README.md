@@ -1,37 +1,44 @@
 # Kitty Pure CLI Hyprland Dotfiles
 
-A collection of dotfiles for the **Hyprland** window manager, specifically engineered around a **Pure CLI Desktop Ecosystem** concept. This setup is built to be ultra-minimalist, blazing fast, animation-free, and automatically turns every workspace into a pure TTY-like terminal environment right from boot time.
+Minimal, terminal-first Hyprland configuration focused on a pure CLI desktop using `kitty` terminals.
 
-## Key Features
+**Quick summary**
 
-* **Modular Config:** Clean structure separated by function into `hyprland.conf`, `keybindings.conf`, and `autostart_cli.conf`.
-* **10 Persistent Workspaces:** Workspaces 1 through 10 are locked to remain active (*persistent*) and will not collapse when a terminal window is closed.
-* **Instant Terminal Autostart:** Upon login, the system utilizes native execution rules to spawn a **Kitty** terminal window in *fullscreen* mode across all 10 workspaces in the background.
-* **Super Snappy & Rice-less:** Gaps, borders, and rounding are all set to `0`, with all animations entirely disabled for maximum performance and distraction-free command-line focus.
+- **Modular configs:** See [hyprland.conf](hyprland.conf), [keybindings.conf](keybindings.conf), [autostart_cli.conf](autostart_cli.conf).
+- **Persistent workspaces:** 1–10 are configured to persist and open a fullscreen `kitty` on startup.
+- **Minimal look:** gaps, borders, rounding, and animations are disabled for a snappy experience.
 
-## Repository Structure
+**Requirements (Arch Linux examples)**
 
-```text
-~/.config/hypr/
-├── hyprland.conf         # Core settings & environment variables
-├── autostart_cli.conf    # Automated per-workspace application spawning
-├── keybindings.conf      # Custom hotkeys & workspace navigation
-└── .gitignore            # Git ignore rules
+- Install `jq`: `sudo pacman -S jq`
+- Optional screenshots: `sudo pacman -S grim slurp`
 
-## How to use
+Repository files
 
-Hotkey,Action
-SUPER + RETURN,Launch a new Kitty terminal instance
-SUPER + Q,Kill the active focused window
-SUPER + F,Toggle window fullscreen status
-SUPER + [1-9],Switch active view to Workspace 1 through 9
-SUPER + 0,Switch active view to Workspace 10
-SUPER + SHIFT + [0-9],Move the focused window to the targeted workspace
-SUPER + SHIFT + E,Terminate the current Hyprland session
+- [hyprland.conf](hyprland.conf) — core settings, sources `~/.config/hypr/autostart_cli.conf` and `~/.config/hypr/keybindings.conf`.
+- [keybindings.conf](keybindings.conf) — hotkeys and workspace navigation.
+- [autostart_cli.conf](autostart_cli.conf) — spawns `kitty` fullscreen on workspaces 1–10.
+- [workspace_binds.conf](workspace_binds.conf) — helper binds for moving windows between workspaces.
 
+Usage notes
 
-## Attention
-I haven't tried using this config in any distribution other than Arch Linux
+- To apply changes to your Hyprland configuration after editing any Hypr files run:
 
-## License 
-See [LICENSE](LICENSE) for license details.
+  `hyprctl reload`
+
+- If you edit your Zsh configuration (`~/.zshrc`) reload it with:
+
+  `source ~/.zshrc`
+
+Keybindings (high level)
+
+- `SUPER + RETURN` — launch `kitty`
+- `SUPER + [1-9]` / `SUPER + 0` — switch to workspaces 1–10
+- `SUPER + SHIFT + [0-9]` — move focused window to workspace
+
+Notes
+
+- This repo was tested on Arch Linux; behavior on other distros may vary.
+- See `LICENSE` for license details.
+
+If you want, I can also add a short install script or an example `~/.zshrc` snippet to this repo.
