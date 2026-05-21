@@ -40,5 +40,3 @@ Notes
 
 - This repo was tested on Arch Linux; behavior on other distros may vary.
 - See `LICENSE` for license details.
-
-If you want, I can also add a short install script or an example `~/.zshrc` snippet to this repo.
