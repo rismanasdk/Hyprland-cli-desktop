@@ -1,0 +1,7 @@
+# Ignore Hyprland crash logs
+*.log
+
+# Ignore text editor temporary files
+*.swp
+*~
+.directory
