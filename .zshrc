@@ -79,7 +79,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-# Menonaktifkan pengecekan status git yang berat
 SET_RETURN_STATUS=true
 OH_MY_ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [ ! -d $OH_MY_ZSH_CACHE_DIR ]; then
@@ -157,6 +156,7 @@ launch_pure_gui() {
   clear
 }
 
+# Add alias of application in here
 alias brave='launch_pure_gui brave-browser'
 alias code='launch_pure_gui  code'
 alias postman='launch_pure_gui  postman'
