@@ -135,8 +135,8 @@ batinfo() {
 unalias wificonnect 2>/dev/null || true
 wificonnect() {
   if [[ -z "$1" || -z "$2" ]]; then
-    echo "Penggunaan: wificonnect <SSID> <password>"
-    echo "Contoh: wificonnect \"Nama\" \"password\""
+    echo "Usage: wificonnect <SSID> <password>"
+    echo "Example: wificonnect \"Name\" \"password\""
     return 1
   fi
   nmcli device wifi connect "$1" password "$2"
