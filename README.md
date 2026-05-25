@@ -1,4 +1,4 @@
-# Kitty Pure CLI Hyprland Dotfiles
+# Desktop Pure CLI
 
 Minimal, terminal-first Hyprland configuration focused on a pure CLI desktop using `kitty` terminals.
 
